@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.smartshopping.demo.models.Plan" />
+
+        <variable
+            name="viewState"
+            type="com.smartshopping.demo.models.ViewState" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/slider_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/standard_include"
+            layout="@layout/standard_plan_view"
+            bind:isVisible="@{((viewState.plan == Plan.STANDARD || viewState.plan == Plan.ESSENTIAL) &amp;&amp; viewState.userCode == ``)}"
+            bind:viewState="@{viewState}" />
+
+
+        <include
+            android:id="@+id/third_party_include"
+            layout="@layout/third_party_coupon"
+            bind:isVisible="@{viewState.plan == Plan.ESSENTIAL &amp;&amp; viewState.userCode != ``}" />
+
+        <include
+            android:id="@+id/plus_include"
+            layout="@layout/plus_plan_view"
+            bind:coupons="@{viewState.promoCodes.length}"
+            bind:isVisible="@{viewState.plan == Plan.PLUS}" />
+
+    </LinearLayout>
+</layout>

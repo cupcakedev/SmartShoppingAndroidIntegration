@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">SmartShopping</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="popup_text">Smartshopping</string>
+    <string name="popup_plan">Standard</string>
+    <string name="popup_close_button">Apply</string>
+    <string name="detecting_checkout">Detecting checkout page</string>
+    <string name="apply_button">Apply</string>
+    <string name="total_label">Your cart total is</string>
+    <string name="coupons_count_first">You have</string>
+    <string name="coupons_count_second">coupon code(s) available</string>
+    <string name="cashback_label">Make sure to activate cashback and save</string>
+    <string name="testing_code">Testing code</string>
+    <string name="continue_to_checkout">Continue to checkout</string>
+    <string name="applied_code">With code: </string>
+    <string name="saved">Saved: </string>
+    <string name="cart_total_success">Cart total:</string>
+    <string name="cart_total_success_dev">Total:</string>
+    <string name="detect_started_dev">Detect started</string>
+    <string name="brand_dev">Brand:</string>
+    <string name="success_title">Success!</string>
+    <string name="deal_title_first">You already have the best deal</string>
+    <string name="deal_title_second">We searched high and low to make sure you got the best deal</string>
+</resources>
