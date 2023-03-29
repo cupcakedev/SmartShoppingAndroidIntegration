@@ -3,7 +3,7 @@ package com.smartshopping.demo.configuration
 import android.graphics.Bitmap
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import com.smartshopping.smartshoppingandroid.SmartShopping
+import com.smartshopping.module.SmartShopping
 import com.smartshopping.demo.models.ViewState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

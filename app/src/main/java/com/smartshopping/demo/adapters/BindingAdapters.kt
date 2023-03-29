@@ -11,21 +11,6 @@ import com.smartshopping.demo.R
 
 class BindingAdapters {
     companion object {
-//        @JvmStatic
-//        @BindingAdapter("progressBasedOnCode")
-//        fun setProgressBasedOnCode(progressBar: ProgressBar, viewState: ViewState) {
-//            val progress = (viewState.progressApplying.value?:0)
-//            val animation =
-//                ObjectAnimator.ofInt(progressBar, "progress", progress)
-//            animation.duration = 500 // 0.5 seconds
-//
-//            animation.interpolator = DecelerateInterpolator()
-//            animation.start()
-//        }
-
-
-
-
         @JvmStatic
         @BindingAdapter("cashBackBasedOnTotal")
         fun setCashBackBasedOnTotal(textView: TextView, total: Double?) {

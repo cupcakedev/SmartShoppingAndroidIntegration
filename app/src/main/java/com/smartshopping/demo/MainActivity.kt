@@ -1,7 +1,6 @@
 package com.smartshopping.demo
-import com.smartshopping.smartshoppingandroid.SmartShopping
-import com.smartshopping.smartshoppingandroid.SmartShoppingProvider
-import com.smartshopping.smartshoppingandroid.models.*
+import com.smartshopping.module.SmartShoppingProvider
+import com.smartshopping.module.models.*
 import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +13,7 @@ import com.smartshopping.demo.models.ViewState
 import com.smartshopping.demo.configuration.BottomNavigationConfiguration
 import com.smartshopping.demo.ui.Popup
 import com.smartshopping.demo.configuration.WebViewConfiguration
+import com.smartshopping.module.SmartShopping
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -42,9 +42,8 @@ class MainActivity : AppCompatActivity(), SmartShoppingProvider {
         supportActionBar?.hide()
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-
         WebViewConfiguration.setupWebView(binding.smartshoppingWebView, smartShopping, viewState)
-        BottomNavigationConfiguration.setupBottomNavigation(applicationContext, binding.navView) {
+        BottomNavigationConfiguration.setupBottomNavigation(binding.navView) {
             viewState.reset()
             binding.smartshoppingWebView.loadUrl(it)
         }
@@ -93,7 +92,7 @@ class MainActivity : AppCompatActivity(), SmartShoppingProvider {
             ProgressStatus.INSPECT_END -> {
                 progress.checkoutState.total?.let {
                     viewState.stage.postValue(Stage.AWAIT)
-                    viewState.currentUrl?.let { url ->
+                    viewState.currentUrl.let { url ->
                         CoroutineScope(Dispatchers.IO).launch {
                             withContext(Dispatchers.IO) {
                                 val promocodes = API.requirePromocodes(url.value.toString()).toTypedArray()

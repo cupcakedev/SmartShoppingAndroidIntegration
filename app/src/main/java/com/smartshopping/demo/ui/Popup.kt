@@ -9,7 +9,7 @@ import android.widget.LinearLayout
 import android.widget.PopupWindow
 import android.widget.TextView
 import androidx.lifecycle.LifecycleOwner
-import com.smartshopping.smartshoppingandroid.SmartShopping
+import com.smartshopping.module.SmartShopping
 import com.smartshopping.demo.R
 import com.smartshopping.demo.models.Mode
 import com.smartshopping.demo.models.Stage
@@ -137,7 +137,7 @@ class Popup(
                 container.addView(ProgressApplying(context, owner, viewState))
             }
             Stage.SUCCESS -> {
-                container.addView(SuccessApplied(context, owner, viewState) {
+                container.addView(SuccessApplied(context, viewState) {
                     viewState.isHidden.postValue(true)
                 })
             }

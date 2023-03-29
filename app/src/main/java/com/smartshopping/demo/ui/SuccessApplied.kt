@@ -10,7 +10,7 @@ import com.smartshopping.demo.R
 import com.smartshopping.demo.databinding.SuccessApplyingBinding
 import com.smartshopping.demo.models.ViewState
 
-class SuccessApplied(context: Context, owner: LifecycleOwner, var viewState: ViewState, var onContinue: () -> Unit) :
+class SuccessApplied(context: Context, var viewState: ViewState, var onContinue: () -> Unit) :
     LinearLayout(context) {
 
     init {
@@ -21,6 +21,5 @@ class SuccessApplied(context: Context, owner: LifecycleOwner, var viewState: Vie
         applyButton.setOnClickListener {
             onContinue()
         }
-//        binding.lifecycleOwner = owner
     }
 }
