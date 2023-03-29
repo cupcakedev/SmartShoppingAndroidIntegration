@@ -113,8 +113,10 @@
                 android:layout_height="6dp"
                 android:layout_marginStart="12dp"
                 android:animation="@anim/blinking"
+                android:repeatCount="infinite"
                 android:background="@drawable/circle_green"
                 android:paddingStart="4dp" />
+
         </LinearLayout>
 
         <LinearLayout
