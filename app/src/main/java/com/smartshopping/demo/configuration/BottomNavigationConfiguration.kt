@@ -7,7 +7,6 @@ class BottomNavigationConfiguration {
 
     companion object {
         fun setupBottomNavigation(
-            context: Context,
             bottomNavigationView: BottomNavigationView,
             redirect: (url: String) -> Unit
         ) {

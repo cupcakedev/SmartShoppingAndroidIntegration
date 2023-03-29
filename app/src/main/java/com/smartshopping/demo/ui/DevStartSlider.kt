@@ -3,6 +3,8 @@ package com.smartshopping.demo.ui
 import android.content.Context
 import android.view.Gravity
 import android.view.LayoutInflater
+import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.LinearLayout
 import androidx.lifecycle.LifecycleOwner
@@ -20,6 +22,12 @@ class DevStartSlider(context: Context, var viewState: ViewState, owner: Lifecycl
         layoutParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
         setupBinding(owner)
         setupApplyButton()
+        startAnimation()
+    }
+
+    private fun startAnimation() {
+        val circleView = findViewById<View>(R.id.blinking_circle)
+        circleView.startAnimation(AnimationUtils.loadAnimation(context, R.anim.blinking))
     }
 
     private fun setupBinding(owner: LifecycleOwner) {
