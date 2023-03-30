@@ -37,7 +37,7 @@ class WebViewConfiguration {
                 }
             }
             webView.settings.javaScriptEnabled = true
-            webView.loadUrl("https://www.tentree.com/23413995/checkouts/059ac616d8ec8ccdd241518bcb7b0233?locale=en")
+            webView.loadUrl("https://www.stockx.com")
             WebView.setWebContentsDebuggingEnabled(true)
             smartShopping.install(webView)
         }
