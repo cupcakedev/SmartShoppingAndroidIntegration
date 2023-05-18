@@ -2,7 +2,9 @@ package com.smartshopping.demo.ui
 
 import android.app.AlertDialog
 import android.content.Context
+import android.graphics.Rect
 import android.transition.Slide
+import android.util.Log
 import android.view.*
 import android.widget.Button
 import android.widget.LinearLayout
@@ -53,7 +55,7 @@ class Popup(
             if (isHidden) {
                 dismiss()
             } else {
-                showAtLocation(menuItem, Gravity.BOTTOM, 0, menuItem.height + 180)
+                showPopup()
             }
         }
 
@@ -148,4 +150,24 @@ class Popup(
         }
     }
 
+    private fun getViewHeight(): Int {
+        val measureSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
+        popupView.measure(measureSpec, measureSpec)
+        return popupView.measuredHeight
+    }
+
+    private fun getXOffset(): Int {
+        val measureSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
+        menuItem.measure(measureSpec, measureSpec)
+        val menuItemWidth = menuItem.measuredWidth
+        val popupWidth = popupView.measuredWidth
+        return (menuItemWidth - popupWidth) / 2
+    }
+
+
+    private fun showPopup() {
+        val height = getViewHeight()
+        val xOff = getXOffset()
+        showAsDropDown(menuItem, xOff, -height - 200)
+    }
 }
